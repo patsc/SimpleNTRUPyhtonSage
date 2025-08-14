@@ -1,4 +1,4 @@
-# Simple Implementation of NTRU in Pyhton and Sage
+# Simple Implementation of NTRU in Python and Sage
 
 Simple implementation of the NTRU cryptosystem in Python and SageMath for educational purposes.
 
