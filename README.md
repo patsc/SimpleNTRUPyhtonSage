@@ -22,7 +22,7 @@ For $\beta$ sufficiently small (we will see below what we mean by "sufficiently 
 
 For NTRU we consider the *search* version of the Learning with Error (LWE) problem. I.e., given $(a,a\cdot s +e)$ for a random elements $a \leftarrow \mathcal{R}_{q,f}$ and $s,e \leftarrow [\beta]$, the task is to find $s$ and $e$.
 
-For completion, the *decision* version of the problem requires to distinguish $(a,u)$ from $(a,a\cdot s +e$ for $a,u \leftarrow \mathcal{R}_{q,f}$ and $e,s \leftarrow [\beta]$. 
+For completion, the *decision* version of the problem requires to distinguish $(a,u)$ from $(a,a\cdot s +e)$ for $a,u \leftarrow \mathcal{R}_{q,f}$ and $e,s \leftarrow [\beta]$. 
 
 #### Parameters
 
@@ -55,9 +55,9 @@ The ciphertext is then computed as: $c = pk \cdot r + m = p\cdot f_q^{-1} \cdot 
 
 For decryption the receiver uses his private key $f$ and multiplies it with the cipher text: $f \cdot c = f\cdot p \cdot f_q^{-1} \cdot g \cdot r + f \cdot m$. Before we start, however, we move all coefficients into the interval $[- q/2, q/2]$. This step is necessary, since we have encoded our message and have defined our polynomials in this domain.
 
-Note that multiplication is done in $\mathcal{R}_{q,x^n-1}$, thus $f$ and $f_q^{-1}$ cancle out and we are left with $p \cdot g \cdot r + f\cdot m$. We would now like to work modulo $p$, but need to be careful not introduce failures, since we apply modulo $q$ and modulo $p$ in a certain order. In general, this may lead to problems, however, if reduction modulo $q$ does not change any parameter (coefficient), we are fine.
+Note that multiplication is done in $\mathcal{R}_{q,x^n-1}$, thus $f$ and $f_q^{-1}$ cancle out and we are left with $p \cdot g \cdot r + f\cdot m$. We would now like to work modulo $p$, but need to be careful not to introduce failures, since we apply modulo $q$ and modulo $p$ in a certain order. In general, this may lead to problems, however, if reduction modulo $q$ does not change any parameter (coefficient), we are fine.
 
-Looking at the polynomials and their coefficients (taken from $[\beta]$), and using the fact that we set $p=3$ thus $\beta =1$, and the fact that our polynomials have at most $2\cdot d$ non-zero coefficients, we know that the coefficents cannot exceed $3 \cdot 2\cdot d + 2 \cdot d$. As a consequence, we that if we require $q/2 > 8 \cdot d$ we have a guarantee that reduction modulo $q$ does not change any of the coefficients and that we are fine.
+Looking at the polynomials and their coefficients (taken from $[\beta]$), and using the fact that we set $p=3$, thus $\beta =1$, and the fact that our polynomials have at most $2\cdot d$ non-zero coefficients, we know that the coefficents cannot exceed $3 \cdot 2\cdot d + 2 \cdot d$. As a consequence, if we require $q/2 > 8 \cdot d$ we have a guarantee that reduction modulo $q$ does not change any of the coefficients and that we are fine.
 
 In the next step, we multiple with $f_p^{-1}$ and reduce module $p$ such that the remaining term corresponds to the cleartext $m$.
 
