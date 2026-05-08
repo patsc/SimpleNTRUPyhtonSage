@@ -14,7 +14,7 @@ The scheme and implementation presented here is a kind of "school-book" variant 
 
 #### Polynomial-Ring
 
-For a given integer $q$, let $\mathcal{R}_q$ denote the ring $\mathbb{Z}_q$, i.e., the ring of integers modulo $q$. For a monic polynomial $f \in \mathbb{Z}_q[x]$ of degree $n$, $\mathcal{R}_{q,f}$ denotes the polynomial ring $\mathbb{Z}_q[x]/ f(x)$.
+For a given integer $q$, let $\mathcal{R}_q$ denote the ring $\mathbb{Z}_q$, i.e., the ring of integers modulo $q$. For a monic polynomial $f(x) \in \mathbb{Z}_q[x]$ of degree $n$, $\mathcal{R}_{q,f}$ denotes the polynomial ring $\mathbb{Z}_q[x]/ f(x)$.
 
 For $\beta$ sufficiently small (we will see below what we mean by "sufficiently small") let $[\beta] := \{-\beta, -\beta +1, ... , -1, 0, 1, ..., \beta\}$. For a polynomial $p$, we denote by $p \leftarrow [\beta]$ the fact that the coefficients of $p$ have been chosen uniformly at random from $[\beta]$.
 
